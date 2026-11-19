@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>O Brilho da Espada</title>
+<meta name="description" content="Jornal informativo e manifesto de ações da A.R.L.S. Templários do Vale do Aço Nº 63.">
+<meta name="theme-color" content="#0A1120">
+<meta property="og:type" content="website">
+<meta property="og:title" content="O Brilho da Espada">
+<meta property="og:description" content="Jornal informativo e manifesto de ações da A.R.L.S. Templários do Vale do Aço Nº 63. Leia a edição mais recente.">
+<meta property="og:image" content="https://jornalobrilhodaespada.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icone-32.png">
+<link rel="apple-touch-icon" href="assets/icone-180.png">
+<link rel="preload" as="image" href="assets/logo-loja.webp">
+<link rel="preload" as="image" href="assets/logo-aflmtva.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/leitor.css?v=2">
+</head>
+<body class="carregando">
+<noscript><p style="padding:32px;color:#ECE6D8;font-family:sans-serif">Para ler o jornal, ative o JavaScript do navegador.</p></noscript>
+
+<!-- Abertura: a espada surge, a luz corre pela lâmina e as logos aparecem -->
+<div class="abertura" id="abertura" aria-hidden="true">
+  <div class="ab-fundo"></div>
+  <div class="ab-raios"></div>
+  <div class="ab-cena">
+    <img class="ab-logo ab-logo-e" src="assets/logo-loja.webp" alt="" decoding="async">
+    <div class="ab-espada-wrap">
+      <svg class="ab-espada" viewBox="0 0 140 620" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <defs>
+          <linearGradient id="abAco" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#3B434D"/><stop offset=".28" stop-color="#AEB8C4"/><stop offset=".47" stop-color="#F6F8FB"/>
+            <stop offset=".53" stop-color="#7F8996"/><stop offset=".74" stop-color="#C3CBD5"/><stop offset="1" stop-color="#434C56"/>
+          </linearGradient>
+          <linearGradient id="abOuro" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#FFF0C2"/><stop offset=".35" stop-color="#E2B957"/><stop offset=".7" stop-color="#9C7224"/><stop offset="1" stop-color="#5E4314"/>
+          </linearGradient>
+          <linearGradient id="abOuroH" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#6E4F17"/><stop offset=".3" stop-color="#D9AE4E"/><stop offset=".5" stop-color="#FFF1C4"/><stop offset=".7" stop-color="#C99A3C"/><stop offset="1" stop-color="#5E4314"/>
+          </linearGradient>
+          <radialGradient id="abPomo" cx=".38" cy=".32" r=".75">
+            <stop offset="0" stop-color="#FFF4D2"/><stop offset=".4" stop-color="#E0B655"/><stop offset="1" stop-color="#5A4013"/>
+          </radialGradient>
+          <linearGradient id="abLuzG" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="abCabo" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#1A0F0A"/><stop offset=".5" stop-color="#4A2C1C"/><stop offset="1" stop-color="#150C08"/>
+          </linearGradient>
+          <clipPath id="abLamina"><path d="M70 4 L84 62 L83 430 L57 430 L56 62 Z"/></clipPath>
+        </defs>
+        <!-- lâmina -->
+        <path d="M70 4 L84 62 L83 430 L57 430 L56 62 Z" fill="url(#abAco)"/>
+        <path d="M70 4 L84 62 L83 430 L70 430 Z" fill="#000" opacity=".10"/>
+        <rect x="68.6" y="70" width="2.8" height="330" rx="1.4" fill="#59626D" opacity=".85"/>
+        <path class="ab-gume" d="M70 4 L56 62 L57 430" fill="none" stroke="#FFFFFF" stroke-width="1.1" opacity="0"/>
+        <g clip-path="url(#abLamina)"><rect class="ab-luz" x="40" y="430" width="60" height="130" fill="url(#abLuzG)"/></g>
+        <!-- guarda (cruz) -->
+        <path d="M6 437 C14 428 26 430 34 435 L106 435 C114 430 126 428 134 437 C130 446 120 452 106 448 L34 448 C20 452 10 446 6 437 Z" fill="url(#abOuroH)" stroke="#4A350F" stroke-width=".8"/>
+        <circle cx="70" cy="441" r="17" fill="url(#abPomo)" stroke="#4A350F" stroke-width="1"/>
+        <circle cx="70" cy="441" r="12.5" fill="none" stroke="#6E4F17" stroke-width=".9" opacity=".8"/>
+        <path d="M70 431 L73.5 437.5 L80 441 L73.5 444.5 L70 451 L66.5 444.5 L60 441 L66.5 437.5 Z" fill="#8E1B1B" stroke="#4A0D0D" stroke-width=".6"/>
+        <!-- cabo com fio de ouro -->
+        <rect x="61" y="452" width="18" height="108" rx="3" fill="url(#abCabo)"/>
+        <g stroke="#D7AE55" stroke-width="1.4" opacity=".85">
+          <path d="M61 460 L79 452"/><path d="M61 472 L79 464"/><path d="M61 484 L79 476"/><path d="M61 496 L79 488"/><path d="M61 508 L79 500"/>
+          <path d="M61 520 L79 512"/><path d="M61 532 L79 524"/><path d="M61 544 L79 536"/><path d="M61 556 L79 548"/>
+        </g>
+        <rect x="58" y="556" width="24" height="8" rx="2" fill="url(#abOuroH)"/>
+        <!-- pomo -->
+        <circle cx="70" cy="585" r="21" fill="url(#abPomo)" stroke="#4A350F" stroke-width="1"/>
+        <path d="M70 573 L72.5 582.5 L82 585 L72.5 587.5 L70 597 L67.5 587.5 L58 585 L67.5 582.5 Z" fill="#6E4F17" opacity=".75"/>
+        <path d="M64 606 L76 606 L72 615 L68 615 Z" fill="url(#abOuroH)"/>
+      </svg>
+      <span class="ab-estrela"></span>
+    </div>
+    <img class="ab-logo ab-logo-d" src="assets/logo-aflmtva.webp" alt="" decoding="async">
+  </div>
+  <div class="ab-texto">
+    <p class="ab-titulo">O Brilho da Espada</p>
+    <span class="ab-filete"></span>
+    <p class="ab-sub">Templários do Vale do Aço Nº 63</p>
+    <p class="ab-legenda" id="abLegenda"></p>
+  </div>
+  <button type="button" class="ab-pular" id="abPular">Pular</button>
+</div>
+
+<!-- Entrada por e-mail -->
+<section class="portao" id="portao" hidden aria-labelledby="ptTitulo">
+  <div class="pt-fundo" aria-hidden="true"></div>
+  <form class="pt-form" id="ptForm" novalidate>
+    <h1 id="ptTitulo" class="pt-titulo">O Brilho da Espada</h1>
+    <p class="pt-texto">Para ler o jornal, informe seu e-mail. Vale qualquer endereço: Gmail, Outlook, Yahoo ou outro.</p>
+    <label class="pt-campo"><span>Seu e-mail</span>
+      <input type="email" id="ptEmail" autocomplete="email" inputmode="email" maxlength="120" required></label>
+    <p class="pt-erro" id="ptErro" role="alert" hidden></p>
+    <button type="submit" class="botao">Entrar</button>
+    <p class="pt-nota">O e-mail fica guardado neste aparelho e serve apenas para o registro de leitura do jornal.</p>
+  </form>
+</section>
+
+<!-- Leitor -->
+<div class="leitor" id="leitor" hidden>
+  <header class="barra">
+    <a class="marca" href="#/" id="marca">O Brilho da Espada</a>
+    <p class="edicao-atual" id="edAtual"></p>
+    <nav class="acoes" aria-label="Ações do leitor">
+      <button type="button" class="acao" id="btEdicoes" aria-haspopup="dialog">Edições</button>
+      <button type="button" class="acao" id="btPaginas" aria-haspopup="dialog">Páginas</button>
+      <button type="button" class="acao so-largo" id="btPdf">Baixar PDF</button>
+      <button type="button" class="acao so-largo" id="btCompartilhar">Compartilhar</button>
+      <button type="button" class="acao so-largo" id="btTela">Tela cheia</button>
+      <button type="button" class="acao" id="btMenu" aria-haspopup="menu" aria-expanded="false">Mais</button>
+    </nav>
+    <div class="menu" id="menu" role="menu" hidden>
+      <button type="button" role="menuitem" class="so-estreito" data-m="pdf">Baixar PDF</button>
+      <button type="button" role="menuitem" class="so-estreito" data-m="compartilhar">Compartilhar</button>
+      <button type="button" role="menuitem" class="so-estreito" data-m="tela">Tela cheia</button>
+      <button type="button" role="menuitem" data-m="email">Trocar e-mail</button>
+      <a role="menuitem" id="mGestor" href="#" target="_blank" rel="noopener" hidden>Área do gestor</a>
+    </div>
+  </header>
+
+  <main class="palco" id="palco">
+    <button type="button" class="seta seta-ant" id="btAnt" aria-label="Página anterior"><span aria-hidden="true"></span></button>
+    <div class="livro" id="livro" tabindex="0" aria-roledescription="revista" aria-label="Páginas da edição">
+      <div class="lado lado-esq" id="ladoEsq"></div>
+      <div class="lado lado-dir" id="ladoDir"></div>
+      <div class="sombra-base" id="sombraBase" aria-hidden="true"></div>
+      <div class="folha" id="folha" hidden>
+        <div class="face frente" id="faceFrente"><span class="luz" aria-hidden="true"></span></div>
+        <div class="face verso" id="faceVerso"><span class="luz" aria-hidden="true"></span></div>
+      </div>
+    </div>
+    <button type="button" class="seta seta-prox" id="btProx" aria-label="Próxima página"><span aria-hidden="true"></span></button>
+    <div class="aviso-palco" id="avisoPalco" hidden></div>
+  </main>
+
+  <footer class="rodape">
+    <input type="range" class="trilha" id="trilha" min="1" max="1" value="1" aria-label="Ir para a página">
+    <p class="contador" id="contador" aria-live="polite"></p>
+  </footer>
+</div>
+
+<!-- Edições anteriores -->
+<aside class="gaveta" id="gaveta" role="dialog" aria-modal="true" aria-labelledby="gvTitulo" hidden>
+  <div class="gv-painel">
+    <div class="gv-topo"><h2 id="gvTitulo">Edições publicadas</h2><button type="button" class="fechar" data-fechar>Fechar</button></div>
+    <ol class="gv-lista" id="gvLista"></ol>
+  </div>
+</aside>
+
+<!-- Todas as páginas -->
+<section class="grade" id="grade" role="dialog" aria-modal="true" aria-labelledby="grTitulo" hidden>
+  <div class="gr-topo"><h2 id="grTitulo">Páginas</h2><button type="button" class="fechar" data-fechar>Fechar</button></div>
+  <ol class="gr-lista" id="grLista"></ol>
+</section>
+
+<!-- Página ampliada -->
+<section class="lupa" id="lupa" role="dialog" aria-modal="true" aria-label="Página ampliada" hidden>
+  <div class="lp-rolo" id="lpRolo"><img id="lpImg" alt=""></div>
+  <button type="button" class="fechar lp-fechar" data-fechar>Fechar</button>
+</section>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script src="assets/leitor.js?v=2" defer></script>
+</body>
+</html>
