@@ -105,12 +105,15 @@
       if (sessao.ler('obe_abertura')) { ab.hidden = true; resolve(); return; }
       ab.addEventListener('click', terminar);
       document.addEventListener('keydown', terminar);
-      var img = $('abCapa');
-      var comecar = function () { ab.classList.add('rodando'); };
-      var espera = img.decode ? img.decode().catch(function () {}) : Promise.resolve();
-      Promise.race([espera, new Promise(function (r) { setTimeout(r, 650); })]).then(comecar);
       pedidoDados.then(function (d) { if (d[1][0]) $('abLegenda').textContent = rotuloEdicao(d[1][0]); }).catch(function () {});
-      setTimeout(terminar, reduzido ? 1500 : 4300);
+      /* espera a fonte do título (no máximo 0,4 s), marca onde fica a ponta da espada e começa */
+      var fontes = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+      Promise.race([fontes, new Promise(function (r) { setTimeout(r, 400); })]).then(function () {
+        var w = ab.querySelector('.ab-espada-wrap').getBoundingClientRect();
+        ab.style.setProperty('--ab-ponta', Math.round(w.top + w.height * 0.01) + 'px');
+        requestAnimationFrame(function () { ab.classList.add('rodando'); });
+        setTimeout(terminar, reduzido ? 1500 : 4400);
+      });
     });
   }
 
