@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>O Brilho da Espada</title>
+<meta name="description" content="Jornal informativo e manifesto de ações da A.R.L.S. Templários do Vale do Aço Nº 63.">
+<meta name="theme-color" content="#0A1120">
+<meta property="og:type" content="website">
+<meta property="og:title" content="O Brilho da Espada">
+<meta property="og:description" content="Jornal informativo e manifesto de ações da A.R.L.S. Templários do Vale do Aço Nº 63. Leia a edição mais recente.">
+<meta property="og:image" content="https://www.jornalobrilhodaespada.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icone-32.png">
+<link rel="apple-touch-icon" href="assets/icone-180.png">
+<link rel="preload" as="image" href="assets/capa.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/leitor.css?v=1">
+</head>
+<body class="carregando">
+<noscript><p style="padding:32px;color:#ECE6D8;font-family:sans-serif">Para ler o jornal, ative o JavaScript do navegador.</p></noscript>
+
+<!-- Abertura: a capa revelada por um feixe de luz, como o brilho da espada -->
+<div class="abertura" id="abertura" aria-hidden="true">
+  <div class="ab-palco">
+    <div class="ab-fio"></div>
+    <div class="ab-capa"><img src="assets/capa.jpg" alt="" id="abCapa" decoding="async"><span class="ab-feixe"></span></div>
+    <p class="ab-legenda" id="abLegenda"></p>
+  </div>
+  <button type="button" class="ab-pular" id="abPular">Pular</button>
+</div>
+
+<!-- Entrada por e-mail -->
+<section class="portao" id="portao" hidden aria-labelledby="ptTitulo">
+  <div class="pt-fundo" aria-hidden="true"></div>
+  <form class="pt-form" id="ptForm" novalidate>
+    <h1 id="ptTitulo" class="pt-titulo">O Brilho da Espada</h1>
+    <p class="pt-texto">Para ler o jornal, informe seu e-mail. Vale qualquer endereço: Gmail, Outlook, Yahoo ou outro.</p>
+    <label class="pt-campo"><span>Seu e-mail</span>
+      <input type="email" id="ptEmail" autocomplete="email" inputmode="email" maxlength="120" required></label>
+    <p class="pt-erro" id="ptErro" role="alert" hidden></p>
+    <button type="submit" class="botao">Entrar</button>
+    <p class="pt-nota">O e-mail fica guardado neste aparelho e serve apenas para o registro de leitura do jornal.</p>
+  </form>
+</section>
+
+<!-- Leitor -->
+<div class="leitor" id="leitor" hidden>
+  <header class="barra">
+    <a class="marca" href="#/" id="marca">O Brilho da Espada</a>
+    <p class="edicao-atual" id="edAtual"></p>
+    <nav class="acoes" aria-label="Ações do leitor">
+      <button type="button" class="acao" id="btEdicoes" aria-haspopup="dialog">Edições</button>
+      <button type="button" class="acao" id="btPaginas" aria-haspopup="dialog">Páginas</button>
+      <button type="button" class="acao so-largo" id="btPdf">Baixar PDF</button>
+      <button type="button" class="acao so-largo" id="btCompartilhar">Compartilhar</button>
+      <button type="button" class="acao so-largo" id="btTela">Tela cheia</button>
+      <button type="button" class="acao" id="btMenu" aria-haspopup="menu" aria-expanded="false">Mais</button>
+    </nav>
+    <div class="menu" id="menu" role="menu" hidden>
+      <button type="button" role="menuitem" class="so-estreito" data-m="pdf">Baixar PDF</button>
+      <button type="button" role="menuitem" class="so-estreito" data-m="compartilhar">Compartilhar</button>
+      <button type="button" role="menuitem" class="so-estreito" data-m="tela">Tela cheia</button>
+      <button type="button" role="menuitem" data-m="email">Trocar e-mail</button>
+      <a role="menuitem" id="mGestor" href="#" target="_blank" rel="noopener" hidden>Área do gestor</a>
+    </div>
+  </header>
+
+  <main class="palco" id="palco">
+    <button type="button" class="seta seta-ant" id="btAnt" aria-label="Página anterior"><span aria-hidden="true"></span></button>
+    <div class="livro" id="livro" tabindex="0" aria-roledescription="revista" aria-label="Páginas da edição">
+      <div class="lado lado-esq" id="ladoEsq"></div>
+      <div class="lado lado-dir" id="ladoDir"></div>
+      <div class="sombra-base" id="sombraBase" aria-hidden="true"></div>
+      <div class="folha" id="folha" hidden>
+        <div class="face frente" id="faceFrente"><span class="luz" aria-hidden="true"></span></div>
+        <div class="face verso" id="faceVerso"><span class="luz" aria-hidden="true"></span></div>
+      </div>
+    </div>
+    <button type="button" class="seta seta-prox" id="btProx" aria-label="Próxima página"><span aria-hidden="true"></span></button>
+    <div class="aviso-palco" id="avisoPalco" hidden></div>
+  </main>
+
+  <footer class="rodape">
+    <input type="range" class="trilha" id="trilha" min="1" max="1" value="1" aria-label="Ir para a página">
+    <p class="contador" id="contador" aria-live="polite"></p>
+  </footer>
+</div>
+
+<!-- Edições anteriores -->
+<aside class="gaveta" id="gaveta" role="dialog" aria-modal="true" aria-labelledby="gvTitulo" hidden>
+  <div class="gv-painel">
+    <div class="gv-topo"><h2 id="gvTitulo">Edições publicadas</h2><button type="button" class="fechar" data-fechar>Fechar</button></div>
+    <ol class="gv-lista" id="gvLista"></ol>
+  </div>
+</aside>
+
+<!-- Todas as páginas -->
+<section class="grade" id="grade" role="dialog" aria-modal="true" aria-labelledby="grTitulo" hidden>
+  <div class="gr-topo"><h2 id="grTitulo">Páginas</h2><button type="button" class="fechar" data-fechar>Fechar</button></div>
+  <ol class="gr-lista" id="grLista"></ol>
+</section>
+
+<!-- Página ampliada -->
+<section class="lupa" id="lupa" role="dialog" aria-modal="true" aria-label="Página ampliada" hidden>
+  <div class="lp-rolo" id="lpRolo"><img id="lpImg" alt=""></div>
+  <button type="button" class="fechar lp-fechar" data-fechar>Fechar</button>
+</section>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script src="assets/leitor.js?v=1" defer></script>
+</body>
+</html>
